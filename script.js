@@ -1,6 +1,6 @@
 let words = ['JAVASCRIPT', 'HTML', 'CSS', 'PYTHON', 'JAVA', 'NODEJS', 'REACT', 'ANGULAR', 'VUE', 'PHP', 'MYSQL', 'MONGODB', 'LINUX', 'GIT', 'DOCKER', 'API', 'AJAX', 'JSON', 'REST', 'GRAPHQL', 'TYPESCRIPT', 'FLUTTER', 'JAVAEE', 'SPRING', 'DJANGO', 'RUBY', 'GO', 'SWIFT', 'KOTLIN', 'BASH', 'AWS', 'AZURE', 'DOCKER', 'LARAVEL', 'EXPRESS', 'SASS', 'LESS', 'WEBPACK', 'GIT', 'GITHUB', 'HEROKU', 'NETLIFY', 'NPM', 'YARN', 'WEBPACK'],
     randomNumber = Math.floor(Math.random() * 45),
-    word = words[randomNumber],
+    word = words[1],
     wordContainer = document.getElementById('word'),
     btn = document.getElementById('btn'),
     input = document.getElementById('input'),
@@ -8,7 +8,8 @@ let words = ['JAVASCRIPT', 'HTML', 'CSS', 'PYTHON', 'JAVA', 'NODEJS', 'REACT', '
     livesCount = 5,
     lives = document.getElementById('lives'),
     wrongs = '',
-    letters = '';
+    letters = '',
+    CounterOfRightLetter = 0;
 
 for (let i = 0; i < word.length; i++) {
     let span = document.createElement('span');
@@ -27,9 +28,10 @@ btn.addEventListener('click', () => {
                 for (let i = 0; i < word.length; i++) {
                     if (word[i] === letter) {
                         wordContainer.children[i].innerHTML = letter;
+                        CounterOfRightLetter++;
                     }
                 }
-                
+
             } else {
                 if (wrongs.includes(letter)) {
                     alert("You can't add same letter twice")
@@ -45,10 +47,14 @@ btn.addEventListener('click', () => {
     } else {
         alert('Invalid letter! please add a letter in format A-Z')
     }
-    
+
     input.value = '';
     if (livesCount === 0) {
         alert(`Game Over! the word is ${word}`);
+        location.reload();
+    }
+    if (CounterOfRightLetter === word.length) {
+        alert(`Congratulations! the word is ${word}`);
         location.reload();
     }
 });
