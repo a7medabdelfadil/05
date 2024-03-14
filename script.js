@@ -1,6 +1,6 @@
-let words = ['JAVASCRIPT', 'HTML', 'CSS', 'PYTHON', 'JAVA', 'NODEJS', 'REACT', 'ANGULAR', 'VUE', 'PHP', 'MYSQL', 'MONGODB', 'LINUX', 'GIT', 'DOCKER', 'API', 'AJAX', 'JSON', 'REST', 'GRAPHQL', 'TYPESCRIPT', 'FLUTTER', 'JAVAEE', 'SPRING', 'DJANGO', 'RUBY', 'GO', 'SWIFT', 'KOTLIN', 'BASH', 'AWS', 'AZURE', 'DOCKER', 'LARAVEL', 'EXPRESS', 'SASS', 'LESS', 'WEBPACK', 'GIT', 'GITHUB', 'HEROKU', 'NETLIFY', 'NPM', 'YARN', 'WEBPACK'],
+let words = ['JAVASCRIPT', 'HTML', 'CSS', 'EXPRESS', 'PYTHON', 'JAVA', 'NODEJS', 'REACT', 'ANGULAR', 'VUE', 'PHP', 'MYSQL', 'MONGODB', 'LINUX', 'GIT', 'DOCKER', 'API', 'AJAX', 'JSON', 'REST', 'GRAPHQL', 'TYPESCRIPT', 'FLUTTER', 'JAVAEE', 'SPRING', 'DJANGO', 'RUBY', 'GO', 'SWIFT', 'KOTLIN', 'BASH', 'AWS', 'AZURE', 'DOCKER', 'LARAVEL', 'SASS', 'LESS', 'WEBPACK', 'GIT', 'GITHUB', 'HEROKU', 'NETLIFY', 'NPM', 'YARN', 'WEBPACK'],
     randomNumber = Math.floor(Math.random() * 45),
-    word = words[1],
+    word = words[randomNumber],
     wordContainer = document.getElementById('word'),
     btn = document.getElementById('btn'),
     input = document.getElementById('input'),
